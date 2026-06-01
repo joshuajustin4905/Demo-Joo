@@ -1,78 +1,292 @@
-<header>
-    <div class="logo">⚡ Wizarding World</div>
-
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#witches">Witches</a></li>
-            <li><a href="#wands">Wands</a></li>
-            <li><a href="#houses">Houses</a></li>
-            <li><a href="#spells">Spells</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-    <h1>Welcome to Hogwarts</h1>
-    <p>
-        Discover legendary witches, powerful wands,
-        magical creatures, and ancient spells.
-    </p>
-</section>
-
-<section class="cards" id="witches">
-    <div class="card">
-        <h3>🧙 Hermione Granger</h3>
-        <p>One of the brightest witches of her age.</p>
-    </div>
-
-    <div class="card">
-        <h3>🧙 Minerva McGonagall</h3>
-        <p>Head of Gryffindor and Transfiguration master.</p>
-    </div>
-</section>
-
-<section class="cards" id="wands">
-    <div class="card">
-        <h3>🪄 Elder Wand</h3>
-        <p>The most powerful wand ever created.</p>
-    </div>
-
-    <div class="card">
-        <h3>🪄 Harry's Wand</h3>
-        <p>Holly wood with phoenix feather core.</p>
-    </div>
-</section>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Wizarding World</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizarding World of Harry Potter</title>
 
-    <style>
-        /* Paste your CSS here */
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
-        nav ul li a{
-            color: gold;
-            text-decoration: none;
-            padding: 10px 18px;
-            border: 1px solid gold;
-            border-radius: 30px;
-            transition: .4s;
-        }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cinzel',serif;
+}
 
-        nav ul li a:hover{
-            background: gold;
-            color: #111;
-            box-shadow: 0 0 15px gold;
-        }
-    </style>
+body{
+background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+color:white;
+overflow-x:hidden;
+}
 
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 40s linear infinite;
+z-index:-1;
+}
+
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:1000px 1000px;}
+}
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+header h1{
+font-size:4rem;
+color:#ffd700;
+text-shadow:0 0 20px gold;
+}
+
+header p{
+font-size:1.3rem;
+margin-top:20px;
+max-width:700px;
+}
+
+.magic-btn{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ffcc00,#ff6f61);
+color:black;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.4s;
+}
+
+.magic-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px gold;
+}
+
+.section{
+padding:80px 10%;
+}
+
+.section h2{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:50px;
+color:#ffd700;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(8px);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(255,215,0,0.6);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#ffcc00;
+}
+
+.house-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.house{
+padding:30px;
+border-radius:20px;
+text-align:center;
+font-weight:bold;
+font-size:1.2rem;
+transition:.4s;
+}
+
+.house:hover{
+transform:scale(1.05);
+}
+
+.gryffindor{
+background:linear-gradient(135deg,#740001,#d3a625);
+}
+
+.slytherin{
+background:linear-gradient(135deg,#1a472a,#5d5d5d);
+}
+
+.ravenclaw{
+background:linear-gradient(135deg,#0e1a40,#946b2d);
+}
+
+.hufflepuff{
+background:linear-gradient(135deg,#ecb939,#000000);
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:black;
+margin-top:50px;
+}
+
+.glow{
+color:#ffd700;
+text-shadow:0 0 10px gold;
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Your HTML content goes here -->
+<div class="stars"></div>
+
+<header>
+<h1>⚡ Wizarding World ⚡</h1>
+<p>
+Step into the magical universe of Harry Potter.
+Explore Hogwarts, discover spells, meet legendary wizards,
+and uncover magical creatures.
+</p>
+
+<button class="magic-btn">Enter Hogwarts</button>
+</header>
+
+<section class="section">
+<h2>🏰 Hogwarts Houses</h2>
+
+<div class="house-grid">
+
+<div class="house gryffindor">
+🦁 Gryffindor
+</div>
+
+<div class="house slytherin">
+🐍 Slytherin
+</div>
+
+<div class="house ravenclaw">
+🦅 Ravenclaw
+</div>
+
+<div class="house hufflepuff">
+🦡 Hufflepuff
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>🧙 Famous Wizards</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Harry Potter</h3>
+<p>The Boy Who Lived and defeated Lord Voldemort.</p>
+</div>
+
+<div class="card">
+<h3>Hermione Granger</h3>
+<p>The brightest witch of her age and master of magic.</p>
+</div>
+
+<div class="card">
+<h3>Ron Weasley</h3>
+<p>Loyal friend and brave member of the Golden Trio.</p>
+</div>
+
+<div class="card">
+<h3>Dumbledore</h3>
+<p>One of the greatest wizards in history.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>✨ Popular Spells</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Expelliarmus</h3>
+<p>Disarming Charm.</p>
+</div>
+
+<div class="card">
+<h3>Lumos</h3>
+<p>Creates magical light.</p>
+</div>
+
+<div class="card">
+<h3>Expecto Patronum</h3>
+<p>Summons a Patronus to repel Dementors.</p>
+</div>
+
+<div class="card">
+<h3>Wingardium Leviosa</h3>
+<p>Levitation Charm.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>🐉 Magical Creatures</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Hedwig</h3>
+<p>Harry's loyal snowy owl.</p>
+</div>
+
+<div class="card">
+<h3>Buckbeak</h3>
+<p>A majestic Hippogriff.</p>
+</div>
+
+<div class="card">
+<h3>Phoenix</h3>
+<p>Reborn from its own ashes.</p>
+</div>
+
+<div class="card">
+<h3>Dragon</h3>
+<p>Powerful magical beast.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+<h3 class="glow">⚡ Mischief Managed ⚡</h3>
+<p>Created for Internship Assignment | Harry Potter Universe Theme</p>
+</footer>
 
 </body>
 </html>
-
