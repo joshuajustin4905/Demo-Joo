@@ -9,154 +9,215 @@
 
 <style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Cinzel',serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cinzel',serif;
+    scroll-behavior:smooth;
 }
 
 body{
-
-background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
-color:white;
-overflow-x:hidden;
+    background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+    color:white;
+    overflow-x:hidden;
 }
 
+/* Animated Background */
 .stars{
-position:fixed;
-width:100%;
-height:100%;
-background:url("https://www.transparenttextures.com/patterns/stardust.png");
-animation:moveStars 40s linear infinite;
-z-index:-1;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation:moveStars 40s linear infinite;
+    z-index:-1;
 }
 
 @keyframes moveStars{
-from{background-position:0 0;}
-to{background-position:1000px 1000px;}
+    from{background-position:0 0;}
+    to{background-position:1000px 1000px;}
 }
 
+/* Navigation Bar */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    color:#ffd700;
+    font-size:2rem;
+    font-weight:bold;
+    text-shadow:0 0 15px gold;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:15px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    padding:10px 18px;
+    border-radius:30px;
+    transition:.4s;
+}
+
+.nav-links a:hover{
+    background:linear-gradient(45deg,#ffd700,#ff6f61);
+    color:black;
+    box-shadow:0 0 20px gold;
+}
+
+/* Hero Section */
 header{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
 }
 
 header h1{
-font-size:4rem;
-color:#ffd700;
-text-shadow:0 0 20px gold;
+    font-size:4rem;
+    color:#ffd700;
+    text-shadow:0 0 25px gold;
 }
 
 header p{
-font-size:1.3rem;
-margin-top:20px;
-max-width:700px;
+    margin-top:20px;
+    max-width:700px;
+    font-size:1.2rem;
 }
 
 .magic-btn{
-margin-top:30px;
-padding:15px 35px;
-border:none;
-border-radius:50px;
-background:linear-gradient(45deg,#ffcc00,#ff6f61);
-color:black;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:.4s;
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#ffd700,#ff6f61);
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.4s;
 }
 
 .magic-btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 25px gold;
+    transform:scale(1.1);
+    box-shadow:0 0 25px gold;
 }
 
+/* Sections */
 .section{
-padding:80px 10%;
+    padding:80px 10%;
 }
 
 .section h2{
-text-align:center;
-font-size:2.5rem;
-margin-bottom:50px;
-color:#ffd700;
+    text-align:center;
+    font-size:2.5rem;
+    color:#ffd700;
+    margin-bottom:40px;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.card{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(8px);
-padding:25px;
-border-radius:20px;
-transition:.4s;
-border:1px solid rgba(255,255,255,0.1);
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(255,215,0,0.6);
-}
-
-.card h3{
-margin-bottom:15px;
-color:#ffcc00;
-}
-
+/* Houses */
 .house-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
 }
 
 .house{
-padding:30px;
-border-radius:20px;
-text-align:center;
-font-weight:bold;
-font-size:1.2rem;
-transition:.4s;
+    padding:30px;
+    text-align:center;
+    border-radius:20px;
+    font-size:1.2rem;
+    font-weight:bold;
+    transition:.4s;
 }
 
 .house:hover{
-transform:scale(1.05);
+    transform:scale(1.05);
 }
 
 .gryffindor{
-background:linear-gradient(135deg,#740001,#d3a625);
+    background:linear-gradient(135deg,#740001,#d3a625);
 }
 
 .slytherin{
-background:linear-gradient(135deg,#1a472a,#5d5d5d);
+    background:linear-gradient(135deg,#1a472a,#5d5d5d);
 }
 
 .ravenclaw{
-background:linear-gradient(135deg,#0e1a40,#946b2d);
+    background:linear-gradient(135deg,#0e1a40,#946b2d);
 }
 
 .hufflepuff{
-background:linear-gradient(135deg,#ecb939,#000000);
+    background:linear-gradient(135deg,#ecb939,#000);
 }
 
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(8px);
+    border-radius:20px;
+    padding:25px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(255,215,0,0.6);
+}
+
+.card h3{
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+/* Contact */
+.contact-box{
+    max-width:600px;
+    margin:auto;
+    text-align:center;
+    background:rgba(255,255,255,0.08);
+    padding:30px;
+    border-radius:20px;
+}
+
+.contact-box p{
+    margin:10px 0;
+}
+
+/* Footer */
 footer{
-text-align:center;
-padding:30px;
-background:black;
-margin-top:50px;
+    background:black;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
 }
 
 .glow{
-color:#ffd700;
-text-shadow:0 0 10px gold;
+    color:#ffd700;
+    text-shadow:0 0 15px gold;
 }
 </style>
 </head>
@@ -165,128 +226,106 @@ text-shadow:0 0 10px gold;
 
 <div class="stars"></div>
 
-<header>
-<h1>⚡ Wizarding World ⚡</h1>
-<p>
-Step into the magical universe of Harry Potter.
-Explore Hogwarts, discover spells, meet legendary wizards,
-and uncover magical creatures.
-</p>
+<nav class="navbar">
+    <div class="logo">⚡ Hogwarts</div>
 
-<button class="magic-btn">Enter Hogwarts</button>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#houses">Houses</a></li>
+        <li><a href="#wizards">Characters</a></li>
+        <li><a href="#spells">Spells</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header id="home">
+    <h1>⚡ Wizarding World ⚡</h1>
+
+    <p>
+        Step into the magical universe of Harry Potter.
+        Explore Hogwarts, discover powerful spells,
+        meet legendary wizards, and encounter magical creatures.
+    </p>
+
+    <button class="magic-btn">Enter Hogwarts</button>
 </header>
 
-<section class="section">
-<h2>🏰 Hogwarts Houses</h2>
+<section class="section" id="houses">
+    <h2>🏰 Hogwarts Houses</h2>
 
-<div class="house-grid">
-
-<div class="house gryffindor">
-🦁 Gryffindor
-</div>
-
-<div class="house slytherin">
-🐍 Slytherin
-</div>
-
-<div class="house ravenclaw">
-🦅 Ravenclaw
-</div>
-
-<div class="house hufflepuff">
-🦡 Hufflepuff
-</div>
-
-</div>
+    <div class="house-grid">
+        <div class="house gryffindor">🦁 Gryffindor</div>
+        <div class="house slytherin">🐍 Slytherin</div>
+        <div class="house ravenclaw">🦅 Ravenclaw</div>
+        <div class="house hufflepuff">🦡 Hufflepuff</div>
+    </div>
 </section>
 
-<section class="section">
-<h2>🧙 Famous Wizards</h2>
+<section class="section" id="wizards">
+    <h2>🧙 Famous Wizards</h2>
 
-<div class="cards">
+    <div class="cards">
+        <div class="card">
+            <h3>Harry Potter</h3>
+            <p>The Boy Who Lived and the chosen wizard who defeated Voldemort.</p>
+        </div>
 
-<div class="card">
-<h3>Harry Potter</h3>
-<p>The Boy Who Lived and defeated Lord Voldemort.</p>
-</div>
+        <div class="card">
+            <h3>Hermione Granger</h3>
+            <p>The brightest witch of her age with unmatched intelligence.</p>
+        </div>
 
-<div class="card">
-<h3>Hermione Granger</h3>
-<p>The brightest witch of her age and master of magic.</p>
-</div>
+        <div class="card">
+            <h3>Ron Weasley</h3>
+            <p>A loyal friend known for bravery and humor.</p>
+        </div>
 
-<div class="card">
-<h3>Ron Weasley</h3>
-<p>Loyal friend and brave member of the Golden Trio.</p>
-</div>
-
-<div class="card">
-<h3>Dumbledore</h3>
-<p>One of the greatest wizards in history.</p>
-</div>
-
-</div>
+        <div class="card">
+            <h3>Albus Dumbledore</h3>
+            <p>The wise Headmaster of Hogwarts School of Witchcraft and Wizardry.</p>
+        </div>
+    </div>
 </section>
 
-<section class="section">
-<h2>✨ Popular Spells</h2>
+<section class="section" id="spells">
+    <h2>✨ Popular Spells</h2>
 
-<div class="cards">
+    <div class="cards">
+        <div class="card">
+            <h3>Expelliarmus</h3>
+            <p>Disarming Charm.</p>
+        </div>
 
-<div class="card">
-<h3>Expelliarmus</h3>
-<p>Disarming Charm.</p>
-</div>
+        <div class="card">
+            <h3>Lumos</h3>
+            <p>Creates magical light from a wand.</p>
+        </div>
 
-<div class="card">
-<h3>Lumos</h3>
-<p>Creates magical light.</p>
-</div>
+        <div class="card">
+            <h3>Expecto Patronum</h3>
+            <p>Summons a Patronus to repel Dementors.</p>
+        </div>
 
-<div class="card">
-<h3>Expecto Patronum</h3>
-<p>Summons a Patronus to repel Dementors.</p>
-</div>
-
-<div class="card">
-<h3>Wingardium Leviosa</h3>
-<p>Levitation Charm.</p>
-</div>
-
-</div>
+        <div class="card">
+            <h3>Wingardium Leviosa</h3>
+            <p>Makes objects float in the air.</p>
+        </div>
+    </div>
 </section>
 
-<section class="section">
-<h2>🐉 Magical Creatures</h2>
+<section class="section" id="contact">
+    <h2>📜 Contact Owl Post</h2>
 
-<div class="cards">
-
-<div class="card">
-<h3>Hedwig</h3>
-<p>Harry's loyal snowy owl.</p>
-</div>
-
-<div class="card">
-<h3>Buckbeak</h3>
-<p>A majestic Hippogriff.</p>
-</div>
-
-<div class="card">
-<h3>Phoenix</h3>
-<p>Reborn from its own ashes.</p>
-</div>
-
-<div class="card">
-<h3>Dragon</h3>
-<p>Powerful magical beast.</p>
-</div>
-
-</div>
+    <div class="contact-box">
+        <p>📧 wizard@hogwarts.com</p>
+        <p>🏰 Hogwarts Castle, Scotland</p>
+        <p>🦉 Send your magical queries anytime!</p>
+    </div>
 </section>
 
 <footer>
-<h3 class="glow">⚡ Mischief Managed ⚡</h3>
-<p>Created for Internship Assignment | Harry Potter Universe Theme</p>
+    <h3 class="glow">⚡ Mischief Managed ⚡</h3>
+    <p>Harry Potter Universe | Internship Assignment Project</p>
 </footer>
 
 </body>
